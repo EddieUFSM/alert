@@ -15,7 +15,7 @@ export class AppModule {
   static register(options: ApplicationBootstrapOptions) {
     return {
       module: AppModule,
-      import: [
+      imports: [
         CoreModule.forRoot(options),
         AlarmsModule.withInfrastructure(
           AlarmsInfrastructureModule.use(options.driver),
