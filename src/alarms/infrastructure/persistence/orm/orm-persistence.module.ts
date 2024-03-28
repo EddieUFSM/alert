@@ -5,13 +5,13 @@ import { AlarmEntity } from './entities/alarm.entity';
 import { OrmAlarmRepository } from './repositories/alarm.repository';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([AlarmEntity])],
-    providers: [
-      {
-        provide: AlarmRepository,
-        useClass: OrmAlarmRepository, // 💡 This is where we bind the port to an adapter
-      },
-    ],
-    exports: [AlarmRepository],
-  })
-  export class OrmAlarmPersistenceModule {}
+  imports: [TypeOrmModule.forFeature([AlarmEntity])],
+  providers: [
+    {
+      provide: AlarmRepository,
+      useClass: OrmAlarmRepository,
+    },
+  ],
+  exports: [AlarmRepository],
+})
+export class OrmAlarmPersistenceModule {}

@@ -8,7 +8,7 @@ import { AlarmsService } from './alarms.service';
   providers: [AlarmsService, AlarmFactory],
 })
 export class AlarmsModule {
-  static withInfrastucture(infrastructureModule: Type | DynamicModule) { // 👈 new static method
+  static withInfrastructure(infrastructureModule: Type | DynamicModule) {
     return {
       module: AlarmsModule,
       imports: [infrastructureModule],
